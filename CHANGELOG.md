@@ -6,6 +6,8 @@ The format is inspired by Keep a Changelog.
 
 ## [Unreleased]
 
+- Removed the internal repository preparation notes and links to the old monorepo.
+
 - Docs links point to the package's page at https://docs.geonode.com/docs/scraper-api/guides/sdks/cli.
 
 - README rewritten so it can be published as the CLI page on docs.geonode.com: configuration table, common tasks, scripting with `--json`, commands and exit codes. Removed the `python -m geonode_scraper_cli` fallback, which does not work (the package has no `__main__`).
