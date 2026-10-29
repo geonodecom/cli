@@ -6,7 +6,7 @@ Collect web data from your terminal for scripts, agents and data pipelines. Extr
 
 **[Try Geonode for free](https://app.geonode.com/sign-up)**
 
-[Integrations page](https://geonode.com/integrations) · [Geonode API docs](https://docs.geonode.com/docs/scraper-api) · [CLI setup guide](https://docs.geonode.com/docs/scraper-api/guides/sdks/cli) · [View package on PyPI](https://pypi.org/project/geonode-scraper-cli/) · [View source on GitHub](https://github.com/geonodecom/cli) · [Complete guide](docs/guide.md)
+[Integrations page](https://geonode.com/integrations/cli) · [Geonode API docs](https://docs.geonode.com/docs/scraper-api) · [CLI setup guide](https://docs.geonode.com/docs/scraper-api/guides/sdks/cli) · [View package on PyPI](https://pypi.org/project/geonode-scraper-cli/) · [View source on GitHub](https://github.com/geonodecom/cli) · [Complete guide](docs/guide.md)
 
 <!-- BEGIN README NAV -->
 [Quick start](#quick-start) · [Choose a command](#choose-a-command) · [Example: save a page for a scheduled pipeline](#example-save-a-page-for-a-scheduled-pipeline) · [Setup questions](#setup-questions)
