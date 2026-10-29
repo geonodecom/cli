@@ -1,6 +1,6 @@
 [project]
 name = "geonode-scraper-cli"
-version = "0.2.2"
+version = "0.2.3"
 description = "Run web scraping, website crawling, URL discovery and search from your terminal with the Geonode CLI, using JSON output for scripts and data pipelines."
 authors = [
   {name = "Geonode Team"},
