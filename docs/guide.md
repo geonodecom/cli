@@ -1,6 +1,6 @@
 # Geonode Scraper CLI
 
-[Integrations page](https://geonode.com/integrations) · [Geonode API docs](https://docs.geonode.com/docs/scraper-api) · [CLI setup guide](https://docs.geonode.com/docs/scraper-api/guides/sdks/cli) · [GitHub source](https://github.com/geonodecom/cli) · [Published package](https://pypi.org/project/geonode-scraper-cli/) · [Repository overview](../README.md)
+[Integrations page](https://geonode.com/integrations/cli) · [Geonode API docs](https://docs.geonode.com/docs/scraper-api) · [CLI setup guide](https://docs.geonode.com/docs/scraper-api/guides/sdks/cli) · [GitHub source](https://github.com/geonodecom/cli) · [Published package](https://pypi.org/project/geonode-scraper-cli/) · [Repository overview](../README.md)
 
 **[Try Geonode for free](https://app.geonode.com/sign-up)**
 
