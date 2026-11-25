@@ -41,7 +41,6 @@ def run(
 @search_jobs_app.command("list")
 def list_jobs(
     ctx: typer.Context,
-    query: Optional[str] = typer.Option(None, "--query", help="Filter by search query."),
     status: Optional[str] = typer.Option(None, "--status", help="queued|processing|completed|failed|cancelled."),
     start_date: Optional[str] = typer.Option(None, "--start-date", help="ISO 8601 lower bound."),
     end_date: Optional[str] = typer.Option(None, "--end-date", help="ISO 8601 upper bound."),
@@ -56,7 +55,7 @@ def list_jobs(
         ListSearchJobsInput,
         page=page,
         page_size=page_size,
-        **optional(query=query, status=status, start_date=start_date, end_date=end_date),
+        **optional(status=status, start_date=start_date, end_date=end_date),
     )
     call(ctx, "list_search_jobs", payload)
 

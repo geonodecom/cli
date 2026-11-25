@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 
 def test_version(invoke):
     result = invoke(["--version"], with_key=False)
@@ -153,11 +155,34 @@ def test_search_run_passes_validated_payload(invoke, fake_service):
 
 
 def test_search_jobs_list_calls_service(invoke, fake_service):
-    invoke(["search", "jobs", "list", "--query", "geonode", "--status", "completed"])
+    invoke(["search", "jobs", "list", "--status", "completed"])
     name, kwargs = fake_service.calls[-1]
     assert name == "list_search_jobs"
-    assert kwargs["query"] == "geonode"
     assert kwargs["status"] == "completed"
+
+
+LIST_COMMANDS = [
+    (["jobs", "list"], "list_jobs", "--url"),
+    (["crawl", "list"], "list_crawl_jobs", "--url"),
+    (["map", "jobs", "list"], "list_map_jobs", "--url"),
+    (["search", "jobs", "list"], "list_search_jobs", "--query"),
+]
+
+
+@pytest.mark.parametrize(("args", "method", "_flag"), LIST_COMMANDS)
+def test_job_lists_call_the_service(invoke, fake_service, args, method, _flag):
+    result = invoke(args)
+    assert result.exit_code == 0, result.output
+    assert fake_service.calls[-1][0] == method
+
+
+@pytest.mark.parametrize(("args", "_method", "flag"), LIST_COMMANDS)
+def test_job_lists_reject_the_removed_filters(invoke, fake_service, args, _method, flag):
+    result = invoke([*args, flag, "https://example.com"])
+    # Rejected by the CLI itself; tools-core 0.6.0 would also refuse the field, with exit code 2 too.
+    assert result.exit_code == 2
+    assert "No such option" in result.output
+    assert fake_service.calls == []
 
 
 def test_search_jobs_get_calls_service(invoke, fake_service):

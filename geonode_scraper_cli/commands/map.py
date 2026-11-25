@@ -42,7 +42,6 @@ def run(
 @map_jobs_app.command("list")
 def list_jobs(
     ctx: typer.Context,
-    url: Optional[str] = typer.Option(None, "--url", help="Filter by base URL."),
     status: Optional[str] = typer.Option(None, "--status", help="queued|processing|completed|failed|cancelled."),
     start_date: Optional[str] = typer.Option(None, "--start-date", help="ISO 8601 lower bound."),
     end_date: Optional[str] = typer.Option(None, "--end-date", help="ISO 8601 upper bound."),
@@ -57,7 +56,7 @@ def list_jobs(
         ListMapJobsInput,
         page=page,
         page_size=page_size,
-        **optional(url=url, status=status, start_date=start_date, end_date=end_date),
+        **optional(status=status, start_date=start_date, end_date=end_date),
     )
     call(ctx, "list_map_jobs", payload)
 

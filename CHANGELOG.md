@@ -6,6 +6,7 @@ The format is inspired by Keep a Changelog.
 
 ## [Unreleased]
 
+- Removed `--url` from `jobs list`, `crawl list` and `map jobs list`, and `--query` from `search jobs list`. The API has rejected these filters with a 400 error since November 2026. `jobs list --job-id` needs the full job ID, as the API matches it exactly.
 - The integrations page link and package homepage point to this integration's own page.
 
 ## [0.2.3] - 2026-10-29

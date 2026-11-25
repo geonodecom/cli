@@ -29,8 +29,7 @@ def get(
 @jobs_app.command("list")
 def list_jobs(
     ctx: typer.Context,
-    job_id: Optional[str] = typer.Option(None, "--job-id", help="Filter by job ID."),
-    url: Optional[str] = typer.Option(None, "--url", help="Filter by target URL."),
+    job_id: Optional[str] = typer.Option(None, "--job-id", help="Filter by full job ID (exact match)."),
     status: Optional[str] = typer.Option(None, "--status", help="queued|processing|completed|failed|cancelled."),
     output: Optional[str] = typer.Option(None, "--output-format", help="Filter by requested output: markdown|html."),
     start_date: Optional[str] = typer.Option(None, "--start-date", help="ISO 8601 lower bound."),
@@ -48,7 +47,6 @@ def list_jobs(
         page_size=page_size,
         **optional(
             job_id=job_id,
-            url=url,
             status=status,
             output=output,
             start_date=start_date,
