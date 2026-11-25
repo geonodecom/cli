@@ -133,7 +133,7 @@ gscraper extract URL [--format markdown|html] [--render-js] [--async] [--proxy-c
                      [--output FILE]
 
 gscraper jobs get JOB_ID
-gscraper jobs list [--status completed] [--url ...] [--page N]
+gscraper jobs list [--status completed] [--page N]
 gscraper jobs wait JOB_ID [--timeout S] [--interval S]
 
 gscraper batch create URL [URL ...] [--format markdown] [--render-js] [--proxy-country US]
@@ -145,15 +145,15 @@ gscraper batch cancel JOB_ID
 gscraper crawl create URL [--depth 2] [--limit 50] [--include-subdomains] [--all-domains]
 gscraper crawl status JOB_ID
 gscraper crawl wait JOB_ID
-gscraper crawl list [--url ...]
+gscraper crawl list [--status ...]
 gscraper crawl cancel JOB_ID
 
 gscraper map run URL [--search TERM] [--include-subdomains] [--keep-query]
-gscraper map jobs list
+gscraper map jobs list [--status ...]
 gscraper map jobs get JOB_ID
 
 gscraper search run QUERY [--locale en] [--page 1] [--safe off|moderate|strict] [--time-range day|week|month|year]
-gscraper search jobs list [--query ...] [--status completed]
+gscraper search jobs list [--status completed]
 gscraper search jobs get JOB_ID
 
 gscraper stats [--start-date ISO] [--end-date ISO]
