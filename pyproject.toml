@@ -1,6 +1,6 @@
 [project]
 name = "geonode-scraper-cli"
-version = "0.2.3"
+version = "0.3.0"
 description = "Run web scraping, website crawling, URL discovery and search from your terminal with the Geonode CLI, using JSON output for scripts and data pipelines."
 authors = [
   {name = "Geonode Team"},
@@ -15,7 +15,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "geonode-scraper-tools-core>=0.5.0",
+  "geonode-scraper-tools-core>=0.6.0",
   "typer>=0.12",
   "rich>=13.0",
   "PyYAML>=6.0",
